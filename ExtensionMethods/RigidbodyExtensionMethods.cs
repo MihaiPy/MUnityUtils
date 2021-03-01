@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-namespace MUtils.ExtensionMethods
+
+namespace MUnityUtils.ExtensionMethods
 {
     public static class RigidbodyExtensionMethods
     {

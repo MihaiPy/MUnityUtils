@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace MUtils.ExtensionMethods
+namespace MUnityUtils.ExtensionMethods
 {
     public static class ListExtensionMethods
     {
@@ -95,6 +95,24 @@ namespace MUtils.ExtensionMethods
         public static List<Vector3> SortListV3Z(this List<Vector3> data)
         {
             return data.Count < 2 ? data : data.OrderBy(v => v.z).ToArray<Vector3>().ToList();
+        }
+        /// <summary>
+        /// Shuffles a list
+        /// </summary>
+        /// <param name="list"></param>
+        /// <typeparam name="T"></typeparam>
+        public static void ShuffleList<T>(this List<T> list)
+        {
+            var rng = new System.Random();
+            var count = list.Count;
+            while (count > 1)
+            {
+                count--;
+                int k = rng.Next(count + 1);
+                T value = list[k];
+                list[k] = list[count];
+                list[count] = value;
+            }
         }
     }
 }

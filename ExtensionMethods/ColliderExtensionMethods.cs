@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace MUtils.ExtensionMethods
+namespace MUnityUtils
 {
     public static class ColliderExtensionMethods
     {

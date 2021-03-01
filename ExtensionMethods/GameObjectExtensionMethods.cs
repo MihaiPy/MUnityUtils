@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-namespace MUtils.ExtensionMethods
+namespace MUnityUtils.ExtensionMethods
 {
     public static class GameObjectExtensionMethods
     {
@@ -29,11 +29,11 @@ namespace MUtils.ExtensionMethods
         /// <param name="parent">Parent</param>
         public static void DestroyChildrens(this GameObject parent)
         {
-            Transform[] children = new Transform[parent.transform.childCount];
-            for (int i = 0; i < parent.transform.childCount; i++)
+            var children = new Transform[parent.transform.childCount];
+            for (var i = 0; i < parent.transform.childCount; i++)
                 children[i] = parent.transform.GetChild(i);
-            for (int i = 0; i < children.Length; i++)
-                GameObject.Destroy(children[i].gameObject);
+            foreach (var t in children)
+                GameObject.Destroy(t.gameObject);
         }
         /// <summary>
         /// Children of one GameObject gets transferred to another GameObject
@@ -42,10 +42,10 @@ namespace MUtils.ExtensionMethods
         /// <param name="to">Target gameobject</param>
         public static void MoveChildrens(this GameObject from, GameObject to)
         {
-            Transform[] children = new Transform[from.transform.childCount];
-            for (int i = 0; i < from.transform.childCount; i++)
+            var children = new Transform[from.transform.childCount];
+            for (var i = 0; i < from.transform.childCount; i++)
                 children[i] = from.transform.GetChild(i);
-            for (int i = 0; i < children.Length; i++)
+            for (var i = 0; i < children.Length; i++)
                 children[i].SetParent(to.transform);
         }
     }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Project.Scripts.MUtils.ExtensionMethods
+namespace MUnityUtils.ExtensionMethods
 {
     public static class RendererExtensionMethods
     {

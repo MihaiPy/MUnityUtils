@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MUtils.ExtensionMethods
+namespace MUnityUtils.ExtensionMethods
 {
     public static class EnumExtensionMethods
     {

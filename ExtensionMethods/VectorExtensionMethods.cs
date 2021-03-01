@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
-namespace MUtils.ExtensionMethods
+namespace MUnityUtils.ExtensionMethods
 {
     public static class VectorExtensionMethods
     {
