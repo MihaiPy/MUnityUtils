@@ -15,6 +15,17 @@ namespace MUnityUtils.ExtensionMethods
             return Vector3.Distance(transform.position, toTransform.position);
         }
         /// <summary>
+        /// Get direction to position
+        /// </summary>
+        /// <param name="transform">This transform.</param>
+        /// <param name="toVector">Target transform.</param>
+        public static Vector3 GetDirectionTo(this Transform transform, Vector3 target)
+        {
+            var heading = target - transform.position;
+            var direction = heading / heading.magnitude;
+            return direction;
+        }
+        /// <summary>
         /// Get direction to another transform
         /// </summary>
         /// <param name="transform">This transform.</param>
