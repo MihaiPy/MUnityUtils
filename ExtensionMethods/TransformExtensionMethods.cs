@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace MUnityUtils.ExtensionMethods
@@ -205,18 +206,6 @@ namespace MUnityUtils.ExtensionMethods
         {
             trans.eulerAngles = new Vector3(trans.eulerAngles.x, trans.eulerAngles.y, value);
         }
-        static void SetChildLayersHelper(Transform transform, int layer, bool recursive)
-        {
-            foreach (Transform child in transform)
-            {
-                child.gameObject.layer = layer;
-
-                if (recursive)
-                {
-                    SetChildLayersHelper(child, layer, recursive);
-                }
-            }
-        }
         /// <summary>
         /// Resets the position of this transform
         /// </summary>
@@ -273,6 +262,19 @@ namespace MUnityUtils.ExtensionMethods
             transform.ResetPos();
             transform.ResetRot();
             return transform;
+        }
+
+        private static void SetChildLayersHelper(IEnumerable transform, int layer, bool recursive)
+        {
+            foreach (Transform child in transform)
+            {
+                child.gameObject.layer = layer;
+
+                if (recursive)
+                {
+                    SetChildLayersHelper(child, layer, recursive);
+                }
+            }
         }
     }
 }

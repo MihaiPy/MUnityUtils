@@ -1,18 +1,19 @@
 ﻿using System;
+using MUnityUtils.StateMachine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
 namespace MUtils.StateMachine.Editor
 {
-    [CustomEditor(typeof(StateMachine))]
+    [CustomEditor(typeof(MUnityUtils.StateMachine.StateMachine))]
     public class Editor : UnityEditor.Editor
     {
-        private StateMachine stateMachine;
+        private MUnityUtils.StateMachine.StateMachine stateMachine;
 
         private void OnEnable()
         {
-            stateMachine = (StateMachine) target;
+            stateMachine = (MUnityUtils.StateMachine.StateMachine) target;
         }
         public override void OnInspectorGUI()
         {

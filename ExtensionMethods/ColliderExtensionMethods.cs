@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace MUnityUtils
+namespace MUnityUtils.ExtensionMethods
 {
     public static class ColliderExtensionMethods
     {
@@ -57,24 +57,5 @@ namespace MUnityUtils
             }
             return isGrounded;
         }
-
-        public static MaxMousePosition IsOffScreen(this Collider collider, Camera camera = null)
-        {
-            if (camera == null) camera = Camera.main;
-            var maxPos = new MaxMousePosition();
-            var position = collider.transform.position;
-            var boundLeft = camera.WorldToScreenPoint(new Vector3(collider.bounds.min.x, position.y, position.z)).x;
-            var boundRight = camera.WorldToScreenPoint(new Vector3(collider.bounds.max.x,position.y,position.z)).x;
-            var distMeshBoundLeft = Input.mousePosition.x - boundLeft;
-            var distMeshBoundRight = boundRight - Input.mousePosition.x;
-            maxPos.MaxLeft = distMeshBoundLeft / Screen.width;
-            maxPos.MaxRight = (Screen.width - distMeshBoundRight) / Screen.width;
-            return maxPos;
-        }
-    }
-    public struct MaxMousePosition
-    {
-        public float MaxLeft;
-        public float MaxRight;
     }
 }

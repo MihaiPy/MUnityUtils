@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-namespace MUtils.ExtensionMethods
+﻿using UnityEngine;
+
+namespace MUnityUtils.ExtensionMethods
 {
     public static class ColorExtensionMethods
     {

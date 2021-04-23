@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-namespace MUtils.ExtensionMethods
+
+namespace MUnityUtils.ExtensionMethods
 {
     public static class ComponentExtensionMethods
     {
@@ -12,7 +13,6 @@ namespace MUtils.ExtensionMethods
         {
             return component.gameObject.AddComponent<T>();
         }
-
         /// <summary>
         /// Gets a component attached to the given component's game object.
         /// If one isn't found, a new one is attached and returned.
@@ -23,7 +23,6 @@ namespace MUtils.ExtensionMethods
         {
             return component.GetComponent<T>() ?? component.AddComponent<T>();
         }
-
         /// <summary>
         /// Checks whether a component's game object has a component of type T attached.
         /// </summary>

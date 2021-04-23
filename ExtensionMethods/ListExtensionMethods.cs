@@ -50,7 +50,7 @@ namespace MUnityUtils.ExtensionMethods
         /// <param name="newIndex"> New index</param>
         public static void Move<T>(this List<T> list, T item, int newIndex)
         {
-            int oldIndex = list.IndexOf(item);
+            var oldIndex = list.IndexOf(item);
             list.RemoveAt(oldIndex);
             if (newIndex > oldIndex)
                 newIndex--;
@@ -108,8 +108,8 @@ namespace MUnityUtils.ExtensionMethods
             while (count > 1)
             {
                 count--;
-                int k = rng.Next(count + 1);
-                T value = list[k];
+                var k = rng.Next(count + 1);
+                var value = list[k];
                 list[k] = list[count];
                 list[count] = value;
             }

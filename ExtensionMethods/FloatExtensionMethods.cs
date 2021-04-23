@@ -41,7 +41,7 @@ namespace MUnityUtils.ExtensionMethods
         /// </summary>
         /// <param name="f"></param>
         /// <returns></returns>
-        public static float Absolute(this float f)
+        public static float Abs(this float f)
         {
             return Mathf.Abs(f);
         }
